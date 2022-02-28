@@ -136,16 +136,12 @@ class CategoryPage extends StatelessWidget {
                                               
                                               String nomi = data[index!][name]
                                                   ["name"][__];
-                                                  print(nomi);
                                               String img =
                                                   data[index!][name]["img"][__];
-                                                  print(img);
                                               String shop = data[index!][name]
                                                   ["shop"][__];
-                                                  print(shop);
                                               String price = data[index!][name]
                                                   ["price"][__].toString();
-                                              print(price);
                                               context
                                                   .read<
                                                       FromCateToTheCartProvider>()

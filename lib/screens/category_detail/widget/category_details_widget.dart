@@ -9,7 +9,7 @@ import '../../../../../services/firebase_detail.dart';
 
 class CategoryDetailsWidget extends StatelessWidget {
   final int? indexx;
-  const CategoryDetailsWidget({Key? key,  this.indexx}) : super(key: key);
+  const CategoryDetailsWidget({Key? key, this.indexx}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,11 @@ class CategoryDetailsWidget extends StatelessWidget {
       children: [
         Text(
           "Details",
-          style:
-              TextStyle(color: textColor, fontFamily: "poppins",fontWeight: FontWeight.bold, fontSize: 20),
+          style: TextStyle(
+              color: textColor,
+              fontFamily: "poppins",
+              fontWeight: FontWeight.bold,
+              fontSize: 20),
         ),
         Text(
           "Paprika is a fruit-producing plant that tastes sweet and slightly spicy from the eggplant or Solanaceae tribe. Its green, yellow, red, or purple fru..",
@@ -57,7 +60,8 @@ class CategoryDetailsWidget extends StatelessWidget {
                   children: [
                     Text(
                       "Time delivery",
-                      style: TextStyle(fontWeight: FontWeight.bold,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
                           color: textColor,
                           fontFamily: "poppins",
                           fontSize: 18),
@@ -100,7 +104,8 @@ class CategoryDetailsWidget extends StatelessWidget {
                   children: [
                     Text(
                       "Category",
-                      style: TextStyle(fontWeight: FontWeight.bold,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
                           color: textColor,
                           fontFamily: "poppins",
                           fontSize: 18),
