@@ -1,11 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:organico_kit_master/provider/cart_add_provider.dart';
 import 'package:organico_kit_master/provider/edite_provider.dart';
 import 'package:organico_kit_master/provider/notif_provider.dart';
 import 'package:organico_kit_master/provider/prise_add_remove_provider.dart';
 import 'package:organico_kit_master/provider/profile_img_provider.dart';
 import 'package:organico_kit_master/routes/router.dart';
 import 'package:provider/provider.dart';
+import 'provider/from_cate_to_the_cart.dart';
 import 'provider/them_provider.dart';
 import 'package:organico_kit_master/provider/eye_provider.dart';
 import '../provider/check_provider.dart';
@@ -21,10 +23,12 @@ void main() async {
     providers: [
       ChangeNotifierProvider(create: (_) => DarkVsLightProvider()),
       ChangeNotifierProvider(create: (_) => EyeProvider()),
+      ChangeNotifierProvider(create: (_) => FromCateToTheCartProvider()),
       ChangeNotifierProvider(create: (_) => CheckProvider()),
       ChangeNotifierProvider(create: (_) => SignUpProvider()),
       ChangeNotifierProvider(create: (_) => SignInProvider()),
       ChangeNotifierProvider(create: (_) => GoogleProvider()),
+      ChangeNotifierProvider(create: (_) => CartProvider()),
       ChangeNotifierProvider(create: (_) => EditeProvider()),
       ChangeNotifierProvider(create: (_) => NotifProvider()),
       ChangeNotifierProvider(create: (_) => ProfileImgProvider()),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:organico_kit_master/core/color_const.dart';
 import 'package:provider/provider.dart';
 import '../../../components/sizeconfig.dart';
 import '../../../provider/them_provider.dart';
@@ -16,7 +15,7 @@ class SearchWidget extends StatelessWidget {
         height: he(48),
         width: wi(374),
         decoration: BoxDecoration(
-          color: ConstColor.greeyColor,
+          border: Border.all(color: textColor,width: 0.5),
           borderRadius: const BorderRadius.all(Radius.circular(30)),
         ),
         child: Padding(

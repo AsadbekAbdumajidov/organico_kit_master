@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 
 import '../../components/sizeconfig.dart';
 import '../../core/color_const.dart';
+import '../../provider/from_cate_to_the_cart.dart';
 import '../../provider/them_provider.dart';
 import '../../services/firebase_detail.dart';
 import '../category_detail/category_detail.dart';
@@ -71,7 +72,9 @@ class CategoryPage extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                       builder: (_) => CategoryDetailPage(
-                                          name: name, index1: index,index2: __),
+                                          name: name,
+                                          index1: index,
+                                          index2: __),
                                     ),
                                   );
                                 },
@@ -129,7 +132,33 @@ class CategoryPage extends StatelessWidget {
                                                     Radius.circular(10)),
                                               ),
                                             ),
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              
+                                              String nomi = data[index!][name]
+                                                  ["name"][__];
+                                                  print(nomi);
+                                              String img =
+                                                  data[index!][name]["img"][__];
+                                                  print(img);
+                                              String shop = data[index!][name]
+                                                  ["shop"][__];
+                                                  print(shop);
+                                              String price = data[index!][name]
+                                                  ["price"][__].toString();
+                                              print(price);
+                                              context
+                                                  .read<
+                                                      FromCateToTheCartProvider>()
+                                                  .categCartAddData(
+                                                      nomi, img, shop, price);
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                  content:
+                                                      Text("Saved to the cart"),
+                                                ),
+                                              );
+                                            },
                                             child: const Icon(
                                               Icons.add,
                                               size: 20,

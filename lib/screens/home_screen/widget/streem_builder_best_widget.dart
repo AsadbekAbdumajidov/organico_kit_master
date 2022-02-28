@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import '../../../components/sizeconfig.dart';
 import '../../../core/category_color_const.dart';
 import '../../../core/color_const.dart';
+import '../../../provider/cart_add_provider.dart';
 import '../../../provider/them_provider.dart';
 import '../../../services/firebase_detail.dart';
 
@@ -40,7 +41,6 @@ class StreemBuilderBestWidget extends StatelessWidget {
                       height: he(242),
                       width: wi(190),
                       decoration: BoxDecoration(
-                        
                         color: ConstCategoryColor.bestSellingColor[__],
                         borderRadius: const BorderRadius.all(
                           Radius.circular(15),
@@ -111,7 +111,17 @@ class StreemBuilderBestWidget extends StatelessWidget {
                                               Radius.circular(10)),
                                         ),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        context
+                                            .read<CartProvider>()
+                                            .cartAddData(data[__]);
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          const SnackBar(
+                                            content: Text("Saved to the cart"),
+                                          ),
+                                        );
+                                      },
                                       child: const Icon(
                                         Icons.add,
                                         size: 20,
