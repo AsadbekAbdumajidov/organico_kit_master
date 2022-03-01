@@ -39,8 +39,30 @@ class StreemBuilderCartWidget extends StatelessWidget {
                     child: FadeInUp(
                       child: Dismissible(
                         background: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            Container(
+                              height: he(80),
+                              width: wi(80),
+                              decoration: BoxDecoration(
+                                  color: ConstCategoryColor.cartColor[__],
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Icon(
+                                    Icons.delete_outline_sharp,
+                                    size: 30,
+                                    color: textColor,
+                                  ),
+                                  Text(
+                                    "Take down",
+                                    style: TextStyle(color: textColor),
+                                  )
+                                ],
+                              ),
+                            ),
                             Container(
                               height: he(80),
                               width: wi(80),
@@ -87,6 +109,7 @@ class StreemBuilderCartWidget extends StatelessWidget {
                                 CachedNetworkImage(
                                   imageUrl: data[__]["img"],
                                   height: he(60),
+                                  width: wi(90),
                                 ),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
