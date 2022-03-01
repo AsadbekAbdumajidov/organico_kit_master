@@ -6,8 +6,10 @@ import 'package:provider/provider.dart';
 import '../../components/sizeconfig.dart';
 import '../../core/category_color_const.dart';
 import '../../core/color_const.dart';
+import '../../provider/cart_add_provider.dart';
 import '../../provider/them_provider.dart';
 import '../../services/firebase_detail.dart';
+import '../detail/detail_page.dart';
 import 'widget/container_app_explore_widget.dart';
 
 class ExploreViewPage extends StatelessWidget {
@@ -58,7 +60,15 @@ class ExploreViewPage extends StatelessWidget {
                               padding: EdgeInsets.only(
                                   top: he(10), left: wi(15), right: wi(15)),
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (_) =>
+                                          DetailPage(date: "Explore", index: __),
+                                    ),
+                                  );
+                                },
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +123,18 @@ class ExploreViewPage extends StatelessWidget {
                                                     Radius.circular(10)),
                                               ),
                                             ),
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              context
+                                                  .read<CartProvider>()
+                                                  .cartAddData(data[__]);
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                  content:
+                                                      Text("Saved to the cart"),
+                                                ),
+                                              );
+                                            },
                                             child: const Icon(
                                               Icons.add,
                                               size: 20,
